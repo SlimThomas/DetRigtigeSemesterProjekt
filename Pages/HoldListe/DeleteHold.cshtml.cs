@@ -13,7 +13,7 @@ namespace DetRigtigeSemesterProjekt.Pages.HoldListe
         [BindProperty]
         public Hold hold { get; set; }
 
-        public DeleteHoldModel(HoldService holdService)
+        public DeleteHoldModel(IHoldService holdService)
         {
             _holdService = holdService;
         }

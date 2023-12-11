@@ -5,7 +5,7 @@
 @using DetRigtigeSemesterProjekt.Models;
 <h1>Delete Confirmation</h1>
 <div class="alert alert-danger">
-    <h5>Er du sikker på at du vil delete dette hold - @Model.hold.Id </h5>
+    <h5>Er du sikker på at du vil fjerne hold "@Model.hold.Id" </h5>
     <form method="post">
         <button type="submit" class="btn btn-primary">Ja</button>
         <a class="btn btn-primary" asp-page="/HoldListe/GetAllHold">Nej</a>
