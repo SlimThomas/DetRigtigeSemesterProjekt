@@ -6,9 +6,17 @@ namespace DetRigtigeSemesterProjekt.Services
     public class HoldService : IHoldService
     {
         public List<Hold> HoldListe { get; private set; }
+        private JsonFileHoldService JsonFileHoldService { get; set; }
         public HoldService()
         {
             HoldListe = MockHold.GetHoldListe();
+        }
+
+        public HoldService(JsonFileHoldService jsonFileHoldService)
+        {
+            JsonFileHoldService = jsonFileHoldService;
+            HoldListe = MockHold.GetHoldListe(); 
+            //Holdliste = JsonFileHoldService.GetJsonHold().ToList(); 
         }
 
         public List<Hold> GetHoldListe()
@@ -19,6 +27,7 @@ namespace DetRigtigeSemesterProjekt.Services
         public void AddHold(Hold hold)
         {
             HoldListe.Add(hold);
+            JsonFileHoldService.SaveJsonHold(HoldListe); 
         }
 
         //Vi har lavet en update hold så man kan opdatere oplysningerne på hold
@@ -36,6 +45,7 @@ namespace DetRigtigeSemesterProjekt.Services
                         i.HundeEjer = hold.HundeEjer;
                     }
                 }
+                JsonFileHoldService.SaveJsonHold(HoldListe);
             }
         }
 
@@ -53,15 +63,21 @@ namespace DetRigtigeSemesterProjekt.Services
 
         public Hold DeleteHold(int? holdId)
         {
-           foreach (Hold hold in HoldListe)
+            Hold itemToBeDeleted = null;
+            foreach (Hold item in HoldListe)
             {
-                if(hold.Id == holdId)
+                if (item.Id == holdId)
                 {
-                    HoldListe.Remove(hold);
-                    return hold; 
+                    itemToBeDeleted = item;
+                    break;
                 }
             }
-            return null; 
+            if (itemToBeDeleted != null)
+            {
+                HoldListe.Remove(itemToBeDeleted);
+                JsonFileHoldService.SaveJsonHold(HoldListe);
+            }
+            return itemToBeDeleted;
         }
 
         public IEnumerable<Hold> NameSearch(string str)
@@ -76,6 +92,8 @@ namespace DetRigtigeSemesterProjekt.Services
             }
             return nameSearch;
         }
+
+       
 
     }
 }

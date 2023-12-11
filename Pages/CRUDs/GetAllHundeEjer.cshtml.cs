@@ -12,7 +12,7 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
 
 
         [BindProperty]
-        public string SearchString { get; set; }
+        public string SearchString { get; private set; }
 
 
         public List<HundeEjer> hundeEjere { get; set; }
