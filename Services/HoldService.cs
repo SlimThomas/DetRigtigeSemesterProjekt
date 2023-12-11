@@ -15,8 +15,8 @@ namespace DetRigtigeSemesterProjekt.Services
         public HoldService(JsonFileHoldService jsonFileHoldService)
         {
             JsonFileHoldService = jsonFileHoldService;
-            HoldListe = MockHold.GetHoldListe(); 
-            //Holdliste = JsonFileHoldService.GetJsonHold().ToList(); 
+            //HoldListe = MockHold.GetHoldListe(); 
+            HoldListe = JsonFileHoldService.GetJsonHold().ToList(); 
         }
 
         public List<Hold> GetHoldListe()
