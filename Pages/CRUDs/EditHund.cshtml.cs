@@ -1,19 +1,21 @@
-using DetRigtigeSemesterProjekt.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using DetRigtigeSemesterProjekt.ServiceCRUD;
+using DetRigtigeSemesterProjekt.Models;
+using DetRigtigeSemesterProjekt.MockData;
 
 namespace DetRigtigeSemesterProjekt.Pages.CRUDs
 {
     public class EditHundModel : PageModel
     {
-        private IHundService _hundService;
+        private IHundeService _hundService;
 
 
         [BindProperty]
         public Hund hund { get; set; }
 
 
-        public EditHundModel(IHundService hundService)
+        public EditHundModel(IHundeService hundService)
         {
             _hundService = hundService;
         }
