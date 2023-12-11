@@ -1,3 +1,4 @@
+using DetRigtigeSemesterProjekt.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -5,8 +6,35 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
 {
     public class EditHundModel : PageModel
     {
-        public void OnGet()
+        private IHundService _hundService;
+
+
+        [BindProperty]
+        public Hund hund { get; set; }
+
+
+        public EditHundModel(IHundService hundService)
         {
+            _hundService = hundService;
+        }
+
+
+        public IActionResult OnGet(int id)
+        {
+            Hund = _hundService.GetHund(id);
+            if (Hund == null)
+                return RedirectToPage("/NotFound");
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            _hundService.UpdateHold(Hund);
+            return RedirectToPage("GetAllHold");
         }
     }
 }

@@ -5,8 +5,33 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
 {
     public class CreateHundeEjerModel : PageModel
     {
-        public void OnGet()
+
+        private IHundeEjerService _hundeEjerService;
+
+        [BindProperty]
+        public Models.HundeEjer hundeEjer { get; set; }
+
+        public CreateHundeEjerModel(IHundeEjerService hundeEjerService)
         {
+            _hundeEjerService = hundeEjerService;
         }
+
+
+
+        public IActionResult OnGet()
+        {
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            _hundeEjerService.AddHundeEjer(hundeEjer);
+            return RedirectToPage("GetAllHundeEjer");
+        }
+
     }
 }

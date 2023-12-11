@@ -1,3 +1,4 @@
+using DetRigtigeSemesterProjekt.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -5,8 +6,30 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
 {
     public class DeleteTrænerModel : PageModel
     {
-        public void OnGet()
+        private ITrænerService _trænerService;
+        [BindProperty] public Træner Træner { get; set; }
+
+        public DeleteTrænerModel(ITrænerService trænerService)
         {
+            _trænerService = trænerService;
+        }
+        public IActionResult OnGet(int id)
+        {
+            Træner = _trænerService.GetTræner(id);
+            if (Træner == null)
+            {
+                return RedirectToPage("/NotFound");
+            }
+            return Page();
+        }
+        public IActionResult OnPost(int id)
+        {
+            Træner deletedItem = _trænerService.DeleteTræner(id);
+            if (deletedItem == null)
+            {
+                return RedirectToPage("/NotFound");
+            }
+            return RedirectToPage();
         }
     }
 }
