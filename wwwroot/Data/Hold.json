@@ -1,7 +1,7 @@
 [
   {
     "Tr\u00E6ner": "Malthe",
-    "Hund": "James, Chihuahua",
+    "Hund": "James, Boxer",
     "Location": "Roskilde, Gr\u00E6svej 23",
     "HundeEjer": "Birghitte",
     "Id": 1
@@ -9,14 +9,14 @@
   {
     "Tr\u00E6ner": "Lucas",
     "Hund": "Nicolai, Chihuahua",
-    "Location": "Holb\u00E6k",
-    "HundeEjer": "Martin",
+    "Location": "Holbæk, Hesseløvej 8",
+    "HundeEjer": "Thor",
     "Id": 2
   },
   {
     "Tr\u00E6ner": "Martin",
     "Hund": "Thomas, Shihtzu",
-    "Location": "Roskilde",
+    "Location": "København, Sundholmsvej 21",
     "HundeEjer": "Nicolai",
     "Id": 3
   }
