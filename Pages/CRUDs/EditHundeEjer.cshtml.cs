@@ -8,39 +8,38 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
 {
     public class EditHundeEjerModel : PageModel
     {
-        public class DeleteHundeEjerModel : PageModel
+        private IHundeEjerService _hundeEjerService;
+
+        [BindProperty]
+        public HundeEjer hundeEjer { get; set; }
+
+        public EditHundeEjerModel(IHundeEjerService hundeEjerService)
         {
+            _hundeEjerService = hundeEjerService;
+        }
 
-            private IHundeEjerService _hundeEjerService;
 
-            [BindProperty]
-            public HundeEjer hundeEjer { get; set; }
 
-            public DeleteHundeEjerModel(IHundeEjerService hundeEjerService)
+        public IActionResult OnGet(int id)
+        {
+            hundeEjer = _hundeEjerService.GetHundeEjer(id);
+            if (hundeEjer == null)
             {
-                _hundeEjerService = hundeEjerService;
+                return RedirectToPage("/Not Found");
             }
+            return Page();
 
+        }
 
-
-            public IActionResult OnGet(int id)
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
             {
-                hundeEjer = _hundeEjerService.GetHundeEjer(id);
-                if (hundeEjer == null)
-                {
-                    return RedirectToPage("/Not found");
-                }
                 return Page();
             }
-
-            public IActionResult OnPost()
-            {
-                HundeEjer deletedhundeEjer = _hundeEjerService.DeleteHundeEjer(hundeEjer.Id);
-                if (deletedhundeEjer == null)
-                {
-                    return RedirectToPage("/Not Found");
-                }
-                return RedirectToPage("GetAllHundeEjer");
-            }
+            _hundeEjerService.UpdateHundeEjer(hundeEjer);
+            return RedirectToPage("GetAllHundeEjere");
         }
+
+    }
 }
