@@ -1,9 +1,14 @@
+using DetRigtigeSemesterProjekt.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
+builder.Services.AddSingleton<IHoldService, HoldService>();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

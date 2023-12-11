@@ -5,8 +5,6 @@ namespace DetRigtigeSemesterProjekt.Pages.HoldListe
 {
     public class DeleteHoldModel : PageModel
     {
-        public void OnGet()
-        {
-        }
+        
     }
 }

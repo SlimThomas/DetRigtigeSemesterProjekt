@@ -2,3 +2,38 @@
 @model DetRigtigeSemesterProjekt.Pages.HoldListe.EditHoldModel
 @{
 }
+
+@*Laver en tabel, hvor fire af kolonerne kan redigeres og en er read only*@
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Hold.Id" class="control-lable"></label>
+        <input asp-for="Hold.Id" class="form-control" readonly="@(true)" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Hold.Træner" class="control-lable"></label>
+        <input asp-for="Hold.Træner" class="form-control" />
+        <span asp-validation-for="Hold.Træner" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Hold.Hund" class="control-lable"></label>
+        <input asp-for="Hold.Hund" class="form-control" />
+        <span asp-validation-for="Hold.Hund" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Hold.Location" class="control-lable"></label>
+        <input asp-for="Hold.Location" class="form-control" />
+        <span asp-validation-for="Hold.Location" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Hold.HundeEjer" class="control-lable"></label>
+        <input asp-for="Hold.HundeEjer" class="form-control" />
+        <span asp-validation-for="Hold.HundeEjer" class="text-danger"></span>
+    </div>
+
+    @*Opretter en knap til edit*@
+    <div class="form-group">
+        <input type="submit" value="Update" class="btn btn-primary" />
+    </div>
+</form>

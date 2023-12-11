@@ -2,3 +2,59 @@
 @model DetRigtigeSemesterProjekt.Pages.HoldListe.GetAllHoldModel
 @{
 }
+
+<h1>Items</h1>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Træner
+            </th>
+            <th>
+                Hund
+            </th>
+            <th>
+                HundeEjer
+            </th>
+            <th>
+                Location
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.HoldListe != null)
+        {
+            foreach (var hold in Model.HoldListe)
+            {
+                <tr>
+                    <td>
+                        @hold.Id
+                    </td>
+                    <td>
+                        @hold.Træner
+                    </td>
+                    <td>
+                        @hold.Hund
+                    </td>
+                    <td>
+                        @hold.HundeEjer
+                    </td>
+                    <td>
+                        @hold.Location
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditHold" asp-route-id="@hold.Id">Edit</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<p>
+    <a class="btn btn-primary" asp-page="CreateHold">Opret Hold</a>
+</p>
+
