@@ -12,6 +12,8 @@ namespace DetRigtigeSemesterProjekt.Services
 
         Hold GetHold(int id);
 
-        Hold DeleteHold(int? id); 
+        Hold DeleteHold(int? id);
+
+        IEnumerable<Hold> NameSearch(string str);
     }
 }

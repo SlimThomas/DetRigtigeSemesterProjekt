@@ -10,6 +10,7 @@ namespace DetRigtigeSemesterProjekt.Pages.HoldListe
     {
         private IHoldService _holdService;
         public List<Hold> HoldListe { get; set; }
+        [BindProperty] public string SearchString { get; set; }
         public GetAllHoldModel(IHoldService holdService)
         {
             _holdService = holdService;
@@ -18,7 +19,11 @@ namespace DetRigtigeSemesterProjekt.Pages.HoldListe
         {
             HoldListe = _holdService.GetHoldListe(); ;
         }
-
+        public IActionResult OnPostNameSearch()
+        {
+            HoldListe = _holdService.NameSearch(SearchString).ToList();
+            return Page();
+        }
         /*public IActionResult OnPostIdSearch()
         {
 

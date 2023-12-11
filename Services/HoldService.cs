@@ -64,5 +64,18 @@ namespace DetRigtigeSemesterProjekt.Services
             return null; 
         }
 
+        public IEnumerable<Hold> NameSearch(string str)
+        {
+            List<Hold> nameSearch = new List<Hold>();
+            foreach (Hold hold in HoldListe)
+            {
+                if (hold.HundeEjer.ToLower().Contains(str.ToLower()))
+                {
+                    nameSearch.Add(hold);
+                }
+            }
+            return nameSearch;
+        }
+
     }
 }
