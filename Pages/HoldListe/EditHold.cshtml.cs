@@ -2,6 +2,7 @@ using DetRigtigeSemesterProjekt.Models;
 using DetRigtigeSemesterProjekt.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using DetRigtigeSemesterProjekt.MockData;
 
 namespace DetRigtigeSemesterProjekt.Pages.HoldListe
 {

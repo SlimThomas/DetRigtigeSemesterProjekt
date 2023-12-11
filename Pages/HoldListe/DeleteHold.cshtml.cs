@@ -1,6 +1,8 @@
 using DetRigtigeSemesterProjekt.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using DetRigtigeSemesterProjekt.Models;
+using DetRigtigeSemesterProjekt.MockData;
 
 namespace DetRigtigeSemesterProjekt.Pages.HoldListe
 {
@@ -9,7 +11,7 @@ namespace DetRigtigeSemesterProjekt.Pages.HoldListe
         private IHoldService _holdService;
 
         [BindProperty]
-        public Models.Hold hold { get; set; }
+        public Hold hold { get; set; }
 
         public DeleteHoldModel(HoldService holdService)
         {
