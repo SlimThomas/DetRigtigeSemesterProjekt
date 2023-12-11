@@ -50,5 +50,19 @@ namespace DetRigtigeSemesterProjekt.Services
             }
             return null;
         }
+
+        public Hold DeleteHold(int? holdId)
+        {
+           foreach (Hold hold in HoldListe)
+            {
+                if(hold.Id == holdId)
+                {
+                    HoldListe.Remove(hold);
+                    return hold; 
+                }
+            }
+            return null; 
+        }
+
     }
 }

@@ -11,5 +11,7 @@ namespace DetRigtigeSemesterProjekt.Services
         void UpdateHold(Hold hold);
 
         Hold GetHold(int id);
+
+        Hold DeleteHold(int? id); 
     }
 }

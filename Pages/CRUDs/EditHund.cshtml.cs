@@ -23,8 +23,8 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
 
         public IActionResult OnGet(int id)
         {
-            Hund = _hundService.GetHund(id);
-            if (Hund == null)
+            hund = _hundService.GetHund(id);
+            if (hund == null)
                 return RedirectToPage("/NotFound");
             return Page();
         }
@@ -35,7 +35,7 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
             {
                 return Page();
             }
-            _hundService.UpdateHold(Hund);
+            _hundService.UpdateHund(hund);
             return RedirectToPage("GetAllHold");
         }
     }

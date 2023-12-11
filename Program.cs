@@ -4,10 +4,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IHoldService, HoldService>();
 
 var app = builder.Build();
 
-builder.Services.AddSingleton<IHoldService, HoldService>();
+
 
 
 // Configure the HTTP request pipeline.
