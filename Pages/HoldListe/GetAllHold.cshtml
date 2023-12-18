@@ -3,10 +3,37 @@
 @{
 }
 
-<h1>Items</h1>
-<table class="table table-bordered table-hover table-striped">
+<h1 class="overskrift">Holdliste</h1>
+
+<div class="row">
+    <div class="col-4"><h5>Søg efter hold</h5></div>
+    <div class="col-4"></div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <form method="post" class="form-inline">
+            <input asp-for="SearchString" class="form-control mr-1" placeholder="Indtast holdnavn" />
+            <input type="submit" asp-page-handler="NameSearch" value="Søg" class="btn btn-primary" />
+        </form>
+    </div>
+
+
+    <div class="col-2"></div>
+
+
+</div>
+
+
+
+<table class="table table-bordered table-hover table-striped table-opacity" width="60%">
+    <col style="width: 3%" />
+    <col style="width: 15%" />
+    <col style="width: 30%" />
+    <col style="width: 20%" />
+    <col style="width: 15%" />
     <thead>
-        <tr>
+        <tr class="btn-secondary active">
             <th>
                 Id
             </th>
@@ -22,6 +49,9 @@
             <th>
                 Location
             </th>
+            <th>
+                Actions
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +59,7 @@
         {
             foreach (var hold in Model.HoldListe)
             {
-                <tr>
+                <tr class="btn-secondary">
                     <td>
                         @hold.Id
                     </td>
@@ -58,7 +88,11 @@
 <p>
     <a class="btn btn-primary" asp-page="CreateHold">Opret Hold</a>
 </p>
-<form method="post" class="form-inline">
-    <input asp-for="SearchString" class="form-control mr-1" placeholder="Enter search term"/>
-    <input type="submit" asp-page-handler="NameSearch" value="Search" class="btn btn-primary"/>
-</form>
+
+
+
+
+
+
+
+
