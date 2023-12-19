@@ -6,7 +6,6 @@ using DetRigtigeSemesterProjekt.MockData;
 
 namespace DetRigtigeSemesterProjekt.Pages.HoldListe
 {
-    //Nicolai Jaksland
     public class EditHoldModel : PageModel
     {
         // (Thomas) - Her laver vi endnu en razor page. Vi tilføjer denne instancefield til klassen, så klassen kan benytte vores service, og anvende listen af hold objekter. 
