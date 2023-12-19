@@ -2,6 +2,7 @@
 
 namespace DetRigtigeSemesterProjekt.Models
 {
+    // (Thomas) Her anvender vi vores base class, som er "person". 
     public class HundeEjer : Person
     {
         [Display(Name = "Addresse")]
@@ -10,7 +11,7 @@ namespace DetRigtigeSemesterProjekt.Models
 
 
         public HundeEjer() { }
-
+        // Her bliver der lavet en default constructor, samt en constructor med properties fra superclassen (ses efter base), hvorpå den eneste unikke her er "Address"
         public HundeEjer(int id, string address, string name, int tlf, string mail)
             : base(id, name, tlf, mail)
         {

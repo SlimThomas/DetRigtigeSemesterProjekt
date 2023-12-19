@@ -4,6 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+// (Thomas) Her fortæller vi builderne at den skal anvende "AddSingleton", som kun skaber 1 instance af klassen "HoldService" 
+// (Som kan deles af alle de klasser vi har lavet dependency Injection) 
 builder.Services.AddSingleton<IHoldService, HoldService>();
 builder.Services.AddTransient<JsonFileHoldService>();
 
