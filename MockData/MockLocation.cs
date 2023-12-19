@@ -12,5 +12,5 @@ namespace DetRigtigeSemesterProjekt.MockData
         };
     }
 
-    // Her har vi lavet en list der viser vores forskellige locationer, hvor vores virksomhed ligger.
+    // Her har vi lavet en list og en new list der gør det muligt at få iplementeret flere locationer.
 }
