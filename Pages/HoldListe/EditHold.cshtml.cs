@@ -6,6 +6,7 @@ using DetRigtigeSemesterProjekt.MockData;
 
 namespace DetRigtigeSemesterProjekt.Pages.HoldListe
 {
+    //Nicolai Jaksland
     public class EditHoldModel : PageModel
     {
         //Laver en ny instancefield
@@ -30,7 +31,8 @@ namespace DetRigtigeSemesterProjekt.Pages.HoldListe
                 return RedirectToPage("/NotFound");
             return Page();
         }
-
+        
+        //OnPost bliver brugt for at lægge den nye information op på siden
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)

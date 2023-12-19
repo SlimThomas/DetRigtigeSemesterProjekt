@@ -3,6 +3,8 @@ using DetRigtigeSemesterProjekt.MockData;
 
 namespace DetRigtigeSemesterProjekt.ServiceCRUD
 {
+    //Nicolai Jaksland
+    //Her inde er alle metoderne som en bruger kan kalde
     public interface IHundeService
     {
         List<Hund> GetHundListe();

@@ -3,6 +3,7 @@ using DetRigtigeSemesterProjekt.Models;
 
 namespace DetRigtigeSemesterProjekt.ServiceCRUD
 {
+    //Nicolai Jaksland
     public class HundeService : IHundeService
     {
         public List<Hund> HundListe { get; private set; }
@@ -11,17 +12,19 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
             HundListe = MockHund.GetHundListe();
         }
 
+        //Denne metode kalder på hele listen så man ser alle hunde
         public List<Hund> GetHundListe()
         {
             return HundListe;
         }
 
+        //Metoden Addhund kan tilføjer en ny hund
         public void AddHund(Hund hund)
         {
             HundListe.Add(hund);
         }
 
-        //Vi har lavet en update hold så man kan opdatere oplysningerne på hold
+        //Metoden UpdateHund der opdatere und
         public void UpdateHund(Hund hund)
         {
             if (hund != null)
@@ -39,6 +42,7 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
             }
         }
 
+        //Denne metode bruger vi til at få den enkelte hund
         public Hund GetHund(int id)
         {
             foreach (Hund hund in HundListe)
@@ -50,6 +54,8 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
             }
             return null;
         }
+
+        //Metoden sletter en hund
         public Hund DeleteHund(int? id)
         {
             foreach (Hund hund in HundListe)

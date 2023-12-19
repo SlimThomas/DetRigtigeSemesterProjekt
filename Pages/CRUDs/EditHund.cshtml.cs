@@ -6,11 +6,13 @@ using DetRigtigeSemesterProjekt.MockData;
 
 namespace DetRigtigeSemesterProjekt.Pages.CRUDs
 {
+    //Nicolai Jaksland
     public class EditHundModel : PageModel
     {
+        //Laver en ny instancefield
         private IHundeService _hundService;
 
-
+        //Binder proprty Hund fra Models så HTML filen kan bruge den
         [BindProperty]
         public Hund hund { get; set; }
 
@@ -20,7 +22,7 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
             _hundService = hundService;
         }
 
-
+        //Vi laver en OnGet metode der sender dig til en "NotFound side", hvis hundens ID man taster ind ikke findes.
         public IActionResult OnGet(int id)
         {
             hund = _hundService.GetHund(id);
@@ -29,6 +31,7 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
             return Page();
         }
 
+        //OnPost bliver brugt for at lægge den nye information op på siden
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
