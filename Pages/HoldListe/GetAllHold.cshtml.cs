@@ -11,7 +11,7 @@ namespace DetRigtigeSemesterProjekt.Pages.HoldListe
     {
         //Her forbinder jeg vores service interface
         private IHoldService _holdService;
-        //Her  
+        //Her kalder jeg på den liste jeg lavede i MockHold og laver det til en property 
         public List<Hold> HoldListe { get; set; }
         [BindProperty] public string SearchString { get; set; }
         public GetAllHoldModel(IHoldService holdService)
