@@ -4,7 +4,7 @@
 }
 
 <h1 class="overskrift">Holdliste</h1>
-
+<!-- (Thomas)For at vi har kunnet styre layout på vores hjemmeside, anvender vi Bootstrap grids. Dette gør det nemmere at rykke rundt på hjemmesiden, da den er delt i 12 colloner. -->
 <div class="row">
     <div class="col-4"><h5>Søg efter hold</h5></div>
     <div class="col-4"></div>
@@ -25,7 +25,7 @@
 </div>
 
 
-
+<!-- (Thomas) Her bliver tabellen med vores data oprettet, samt bliver der leget med længden på collumsne-->
 <table class="table table-bordered table-hover table-striped table-opacity" width="60%">
     <col style="width: 3%" />
     <col style="width: 15%" />
@@ -85,6 +85,7 @@
     </tbody>
 </table>
 
+<!-- (Thomas) Her oprettes der en knap, som der kan klikkes på også bliver man reroutet til vores razorpage "CreateHold" -->
 <p>
     <a class="btn btn-primary" asp-page="CreateHold">Opret Hold</a>
 </p>

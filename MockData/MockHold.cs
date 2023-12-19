@@ -2,7 +2,7 @@
 
 namespace DetRigtigeSemesterProjekt.MockData
 {
-    //Martin Venge Skytte
+    //Thomas - jeg opretter mockdata, som vi bruger til test inden vi opretter en Json fil, derfor har vi lavet en "Mock Data" mappe, hvor alt vores test data er samlet. 
     public class MockHold
     {
         private static List<Hold> HoldListe = new List<Hold>()//har laver jeg en liste af klassen <Hold> kaldet HoldListe

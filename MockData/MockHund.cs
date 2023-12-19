@@ -2,6 +2,7 @@
 
 namespace DetRigtigeSemesterProjekt.MockData
 {
+    //Thomas - jeg opretter mockdata, som vi bruger til test inden vi opretter en Json fil, derfor har vi lavet en "Mock Data" mappe, hvor alt vores test data er samlet. 
     public class MockHund
     {
         private static List<Hund> HundListe = new List<Hund>()
@@ -24,4 +25,5 @@ namespace DetRigtigeSemesterProjekt.MockData
             return null;
         }
     }
+    // Samme princip her som i Mockhold
 }

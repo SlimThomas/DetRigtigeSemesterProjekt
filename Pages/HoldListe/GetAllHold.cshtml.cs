@@ -6,14 +6,16 @@ using DetRigtigeSemesterProjekt.MockData;
 
 namespace DetRigtigeSemesterProjekt.Pages.HoldListe
 {
-    //Martin Venge Skytte
+    // (Thomas) - Her laver vi endnu en razor page. Vi tilføjer denne instancefield til klassen, så klassen kan benytte vores service, og anvende listen af hold objekter.
     public class GetAllHoldModel : PageModel
     {
         //Her forbinder jeg vores service interface
         private IHoldService _holdService;
-        //Her kalder jeg på den liste jeg lavede i MockHold og laver det til en property 
+        
         public List<Hold> HoldListe { get; set; }
+        // (Thomas) her anvender vi en "BindProperty", som binder denne property "public Models.Hold Hold { get; set; }, dette gøres så det er denne property der er bundet til UI'en, altså siden. 
         [BindProperty] public string SearchString { get; set; }
+        // (Thomas) Her laver vi en dependency injection, da servicen er argument til konstruktoren. 
         public GetAllHoldModel(IHoldService holdService)
         {
             _holdService = holdService;
@@ -27,10 +29,7 @@ namespace DetRigtigeSemesterProjekt.Pages.HoldListe
             HoldListe = _holdService.NameSearch(SearchString).ToList();
             return Page();
         }
-        /*public IActionResult OnPostIdSearch()
-        {
-
-        }*/
+        
 
     }
 }
