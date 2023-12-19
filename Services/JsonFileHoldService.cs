@@ -2,7 +2,7 @@
 using System.Text.Json;
 
 namespace DetRigtigeSemesterProjekt.Services
-{
+{//Thomas
     public class JsonFileHoldService
     {
         public IWebHostEnvironment WebHostEnvironment { get; }

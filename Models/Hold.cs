@@ -2,6 +2,7 @@
 
 namespace DetRigtigeSemesterProjekt.Models
 {
+    //Martin Venge Skytte
     public class Hold
     {
         [Display(Name = "Træner")]

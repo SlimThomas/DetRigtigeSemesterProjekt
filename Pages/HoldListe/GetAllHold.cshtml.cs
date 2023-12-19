@@ -6,9 +6,12 @@ using DetRigtigeSemesterProjekt.MockData;
 
 namespace DetRigtigeSemesterProjekt.Pages.HoldListe
 {
+    //Martin Venge Skytte
     public class GetAllHoldModel : PageModel
     {
+        //Her forbinder jeg vores service interface
         private IHoldService _holdService;
+        //Her  
         public List<Hold> HoldListe { get; set; }
         [BindProperty] public string SearchString { get; set; }
         public GetAllHoldModel(IHoldService holdService)

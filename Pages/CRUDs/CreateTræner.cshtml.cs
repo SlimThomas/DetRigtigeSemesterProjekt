@@ -6,6 +6,7 @@ using DetRigtigeSemesterProjekt.MockData;
 
 namespace DetRigtigeSemesterProjekt.Pages.CRUDs
 {
+    //Martin Venge Skytte
     public class CreateTrænerModel : PageModel
     {
         private ITrænerService _trænerService;

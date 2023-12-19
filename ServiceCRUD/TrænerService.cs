@@ -3,6 +3,7 @@ using DetRigtigeSemesterProjekt.Models;
 
 namespace DetRigtigeSemesterProjekt.ServiceCRUD
 {
+    //Martin Venge Skytte
     public class TrænerService : ITrænerService
     {
         public List<Træner> TrænerListe { get; private set; }

@@ -3,6 +3,7 @@ using DetRigtigeSemesterProjekt.MockData;
 
 namespace DetRigtigeSemesterProjekt.ServiceCRUD
 {
+    //Martin Venge Skytte
     public interface ITrænerService
     {
         List<Træner> GetTrænerListe();

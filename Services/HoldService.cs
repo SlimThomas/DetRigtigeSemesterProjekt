@@ -3,33 +3,38 @@ using DetRigtigeSemesterProjekt.Models;
 
 namespace DetRigtigeSemesterProjekt.Services
 {
+    //Martin Venge Skytte
     public class HoldService : IHoldService
     {
+        //Martin Venge Skytte
         public List<Hold> HoldListe { get; private set; }
+        //Thomas
         private JsonFileHoldService JsonFileHoldService { get; set; }
+        //Martin Venge Skytte
         public HoldService()
         {
             HoldListe = MockHold.GetHoldListe();
         }
-
+        //Thomas
         public HoldService(JsonFileHoldService jsonFileHoldService)
         {
             JsonFileHoldService = jsonFileHoldService;
             //HoldListe = MockHold.GetHoldListe(); 
             HoldListe = JsonFileHoldService.GetJsonHold().ToList(); 
         }
-
+        //Martin Venge Skytte
         public List<Hold> GetHoldListe()
         {
             return HoldListe;
         }
-
+        //Thomas
         public void AddHold(Hold hold)
         {
             HoldListe.Add(hold);
             JsonFileHoldService.SaveJsonHold(HoldListe); 
         }
 
+        //Nicolai
         //Vi har lavet en update hold så man kan opdatere oplysningerne på hold
         public void UpdateHold(Hold hold)
         {
@@ -60,7 +65,7 @@ namespace DetRigtigeSemesterProjekt.Services
             }
             return null;
         }
-
+        //Thomas
         public Hold DeleteHold(int? holdId)
         {
             Hold itemToBeDeleted = null;
@@ -80,6 +85,7 @@ namespace DetRigtigeSemesterProjekt.Services
             return itemToBeDeleted;
         }
 
+        //Martin Venge Skytte
         public IEnumerable<Hold> NameSearch(string str)
         {
             List<Hold> nameSearch = new List<Hold>();
