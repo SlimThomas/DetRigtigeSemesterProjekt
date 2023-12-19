@@ -3,39 +3,42 @@ using DetRigtigeSemesterProjekt.Models;
 
 namespace DetRigtigeSemesterProjekt.Services
 {
-    //Martin Venge Skytte
+    // (Thomas) her laver vi et Holdservice, som skal bruges til at hente data fra mockhold, og senere fra JsonFilen. 
     public class HoldService : IHoldService
     {
-        //Martin Venge Skytte
+        
         public List<Hold> HoldListe { get; private set; }
-        //Thomas
+        
+        // (Thomas) Her bliver servicen injiceres ind i ItemService
         private JsonFileHoldService JsonFileHoldService { get; set; }
-        //Martin Venge Skytte
+        
         public HoldService()
         {
             HoldListe = MockHold.GetHoldListe();
         }
-        //Thomas
+       //(Thomas) vi laver en constructor der initialisere Hold med mockdata, hvorefter vi har tilføjet jsonFileHoldService til constructoren, så den initialisere med data fra Json filen
         public HoldService(JsonFileHoldService jsonFileHoldService)
         {
             JsonFileHoldService = jsonFileHoldService;
             //HoldListe = MockHold.GetHoldListe(); 
             HoldListe = JsonFileHoldService.GetJsonHold().ToList(); 
         }
-        //Martin Venge Skytte
+        
         public List<Hold> GetHoldListe()
         {
             return HoldListe;
         }
-        //Thomas
+        // (Thomas) Der bliver kaldt AddHold() metoden, når OnPost() metoden bliver kørt i CreateHold.cs
+        // (Thomas) Der er opdateret metoden "AddHold" med json, så den SaveJsonHold() metoden bliver kaldt
         public void AddHold(Hold hold)
         {
             HoldListe.Add(hold);
             JsonFileHoldService.SaveJsonHold(HoldListe); 
         }
 
-        //Nicolai
-        //Vi har lavet en update hold så man kan opdatere oplysningerne på hold
+        // (Thomas) Her bliver der lavet en metode "UpdateHold()", som bliver kaldt når OnPost() bliver anvendt i EditHoldModel.cs
+        // (Thomas) Metoden gennekøber listen og finde et hold, med samme id, og sætter de andre parametre = det man har skrevet. 
+        // (Thomas) Der er opdateret metoden "AddHold" med json, så den SaveJsonHold() metoden bliver kaldt
         public void UpdateHold(Hold hold)
         {
             if (hold != null)
@@ -65,7 +68,7 @@ namespace DetRigtigeSemesterProjekt.Services
             }
             return null;
         }
-        //Thomas
+        // (Thomas) Der er opdateret metoden "AddHold" med json, så den SaveJsonHold() metoden bliver kaldt
         public Hold DeleteHold(int? holdId)
         {
             Hold itemToBeDeleted = null;
@@ -85,7 +88,8 @@ namespace DetRigtigeSemesterProjekt.Services
             return itemToBeDeleted;
         }
 
-        //Martin Venge Skytte
+        // (Thomas) Her tilføjes der en søge funktion, som benytter interfacet IEnumerable, som vi anvender istedet for klassen "list". Interfacet implementere Listen. 
+        // (Thomas) Her laves der en funktion, som tager en string, og returnere alle hold der har samme string (name)
         public IEnumerable<Hold> NameSearch(string str)
         {
             List<Hold> nameSearch = new List<Hold>();
