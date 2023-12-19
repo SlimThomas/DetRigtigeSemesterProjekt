@@ -18,9 +18,11 @@
             this.location = location;
         }
 
-        public override string ToString()
-        {
-            return $"{{{nameof(Town)}={Town}, {nameof(Address)}={Address}, {nameof(postnr)}={postnr.ToString()}, {nameof(location)}={location}}}";
-        }
+        // Her har vi lavet en get, set metode så vi kan lave en location samt give det en constructor nedenunder.
+
+        //public override string ToString()
+        //{
+        //    return $"{{{nameof(Town)}={Town}, {nameof(Address)}={Address}, {nameof(postnr)}={postnr.ToString()}, {nameof(location)}={location}}}";
+        //}
     }
 }

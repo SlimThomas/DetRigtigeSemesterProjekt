@@ -11,4 +11,6 @@ namespace DetRigtigeSemesterProjekt.MockData
         new Location("Århus", "Fasangade 12", 8000, "Jylland"),
         };
     }
+
+    // Her har vi lavet en list der viser vores forskellige locationer, hvor vores virksomhed ligger.
 }

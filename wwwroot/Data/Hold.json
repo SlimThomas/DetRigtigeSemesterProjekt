@@ -9,15 +9,22 @@
   {
     "Tr\u00E6ner": "Lucas",
     "Hund": "Nicolai, Chihuahua",
-    "Location": "Holbæk, Hesseløvej 8",
+    "Location": "Holb\u00E6k, Hessel\u00F8vej 8",
     "HundeEjer": "Thor",
     "Id": 2
   },
   {
     "Tr\u00E6ner": "Martin",
     "Hund": "Thomas, Shihtzu",
-    "Location": "København, Sundholmsvej 21",
+    "Location": "K\u00F8benhavn, Sundholmsvej 21",
     "HundeEjer": "Nicolai",
     "Id": 3
+  },
+  {
+    "Tr\u00E6ner": "Malthe",
+    "Hund": "Fuffy, Golden Retriever",
+    "Location": "Roskilde, Gr\u00E6svej 8",
+    "HundeEjer": "Kirsten Riis",
+    "Id": 4
   }
 ]
