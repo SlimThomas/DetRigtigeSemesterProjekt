@@ -10,6 +10,7 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
     {
         private IHundeEjerService _hundeEjerService;
 
+        // (Thomas) Binder proprty Hold fra Models så propertien bliver bundet til HTML'en 
         [BindProperty]
         public HundeEjer hundeEjer { get; set; }
 
@@ -19,7 +20,7 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
         }
 
 
-
+        // (Thomas) Vi laver en OnGet metode der sender dig til en "NotFound side", hvis holdets ID man taster ind ikke findes.
         public IActionResult OnGet(int id)
         {
             hundeEjer = _hundeEjerService.GetHundeEjer(id);
@@ -31,6 +32,7 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
 
         }
 
+        //OnPost bliver brugt for at lægge den nye information op på siden
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
