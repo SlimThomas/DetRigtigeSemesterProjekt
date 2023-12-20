@@ -17,4 +17,5 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
 
         
     }
+    // Her har vi en liste over det CRUD som hører til Location, samt det interface som snakker sammen med LocationService
 }

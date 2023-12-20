@@ -8,6 +8,7 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
     public class LocationService : ILocationService
     {
 
+        // Her har vi en liste over de CRUD til Location, og en foreach samt en return af alle CRUD´sne
 
         public List<Location> LocationListe { get; private set; }
 
