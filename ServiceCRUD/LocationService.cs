@@ -70,6 +70,11 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
         {
             throw new NotImplementedException();
         }
+
+        public Location EditLocation(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
