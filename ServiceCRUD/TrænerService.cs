@@ -1,5 +1,6 @@
 ﻿using DetRigtigeSemesterProjekt.MockData;
 using DetRigtigeSemesterProjekt.Models;
+using DetRigtigeSemesterProjekt.Services;
 
 namespace DetRigtigeSemesterProjekt.ServiceCRUD
 {
@@ -7,6 +8,7 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
     public class TrænerService : ITrænerService
     {
         public List<Træner> TrænerListe { get; private set; }
+        //private JsonFileTrænerService JsonFileTrænerService { get; set; }
 
         public TrænerService()
         {
@@ -21,6 +23,7 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
         public void AddTræner(Træner træner)
         {
             TrænerListe.Add(træner);
+            //JsonFileTrænerService.SaveJsonTræner(TrænerListe);
         }
 
         public IEnumerable<Træner> NameSearch(string str)
@@ -49,6 +52,7 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
                         t.Wage = træner.Wage;
                         t.HoursWorked = træner.HoursWorked;
                     }
+                    //JsonFileTrænerService.SaveJsonTræner(TrænerListe);
                 }
             }
         }
@@ -70,11 +74,18 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
                 if (t.Id == trænerId)
                 {
                     TrænerListe.Remove(t);
+                    //JsonFileTrænerService.SaveJsonTræner(TrænerListe);
                     return t;
                 }
             }
             return null;
         }
+        /*public TrænerService(JsonFileTrænerService jsonFileTrænerService)
+        {
+            JsonFileTrænerService = jsonFileTrænerService;
+            //HoldListe = MockHold.GetHoldListe(); 
+            TrænerListe = JsonFileTrænerService.GetJsonTræner().ToList();
+        }*/
 
     }
 }

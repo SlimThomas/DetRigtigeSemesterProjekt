@@ -8,6 +8,8 @@ builder.Services.AddRazorPages();
 // (Som kan deles af alle de klasser vi har lavet dependency Injection) 
 builder.Services.AddSingleton<IHoldService, HoldService>();
 builder.Services.AddTransient<JsonFileHoldService>();
+//builder.Services.AddSingleton<ITrænerService, TrænerService>();
+//builder.Services.AddTransient<JsonFileTrænerService>();
 
 var app = builder.Build();
 

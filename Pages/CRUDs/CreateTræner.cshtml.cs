@@ -10,7 +10,10 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
     public class CreateTrænerModel : PageModel
     {
         private ITrænerService _trænerService;
+
         [BindProperty] public Træner Træner { get; set; }
+        //Vi bruger BindProperty her så vi kan binde vores property til htmlsiden
+        //Så man i UI'en kan overføre data fra inputfields til propertyen.
 
         public CreateTrænerModel(ITrænerService trænerService)
         {
@@ -30,5 +33,6 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
             _trænerService.AddTræner(Træner);
             return RedirectToPage("GetAllTræner");
         }
+        //Vores OnPost metode får os tilbage efter at vi har lavet en ny træner.
     }
 }

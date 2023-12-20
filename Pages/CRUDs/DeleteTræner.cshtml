@@ -2,3 +2,11 @@
 @model DetRigtigeSemesterProjekt.Pages.CRUDs.DeleteTrænerModel
 @{
 }
+@* <h1>Delete Confirmation</h1>
+<div class="alert alert-danger">
+    <h5>Er du sikker på at du vil fjerne Træner "@Model.Træner.Id" </h5>
+    <form method="post">
+        <button type="submit" class="btn btn-primary">Ja</button>
+        <a class="btn btn-primary" asp-page="/CRUDs/GetAllTræner">Nej</a> her skriver vi kode der får os tilbage til vores GetAll Page når vi submitter
+    </form>
+</div> *@

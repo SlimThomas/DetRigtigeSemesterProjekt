@@ -2,3 +2,66 @@
 @model DetRigtigeSemesterProjekt.Pages.CRUDs.GetAllTrænerModel
 @{
 }
+@*
+
+her indsætter vi kode som lister vores Træner Objekter fra vores Liste med Trænere i tabel form
+<h1>Trænere</h1>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Tlfnr
+        </th>
+        <th>
+            Mail
+        </th>
+        <th>
+            Wage
+        </th>
+        <th>
+            HoursWorked
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        @if (Model.TrænerListe != null)
+        {
+            foreach ( var t in Model.TrænerListe)
+            {
+                <tr>
+                    <td>
+                        @t.Id
+                    </td>
+                    <td>
+                        @t.Name
+                    </td>
+                    <td>
+                        @t.Tlf
+                    </td>
+                    <td>
+                        @t.Mail
+                    </td>
+                    <td>
+                        @t.Wage
+                    </td>
+                    <td>
+                        @t.HoursWorked
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+Man ville så derefter indsætte  en navigations link ind i layout.cshtml som ville se sådan her ud
+
+<li class="nav-træner">
+    <a class="nav-link" asp-page="" asp-page="CRUDs/GetAllTræner">Trænere</a>
+</li> *@

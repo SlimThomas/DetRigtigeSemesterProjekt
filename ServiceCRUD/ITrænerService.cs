@@ -6,6 +6,8 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
     //Martin Venge Skytte
     public interface ITrænerService
     {
+        //Her bliver der tilføjet Metode signaturer i vores interface som så senere vil blive implementeret
+        //i service klassen
         List<Træner> GetTrænerListe();
         void AddTræner(Træner træner);
         IEnumerable<Træner> NameSearch(string str);

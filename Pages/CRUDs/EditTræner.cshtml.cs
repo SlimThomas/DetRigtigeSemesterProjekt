@@ -10,8 +10,10 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
     public class EditTrænerModel : PageModel
     {
         private ITrænerService _trænerService;
+
         [BindProperty]
         public Træner Træner { get; set; }
+
         public EditTrænerModel(ITrænerService trænerservice)
         {
             _trænerService = trænerservice;
