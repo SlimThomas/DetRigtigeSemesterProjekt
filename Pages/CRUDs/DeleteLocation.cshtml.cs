@@ -11,6 +11,7 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
         {
             private ILocationService _locationService;
 
+        // Her tilføjer vi en property
             [BindProperty]
             public Location location { get; set; }
 
@@ -27,6 +28,7 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
                 }
                 return Page();
             }
+              // Her initialisere jeg propertien med det item som skal slettes, og det gør man ved at kalde på GetLocation.
 
             public IActionResult OnPost(string str)
             {
@@ -38,4 +40,4 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
                 return RedirectToPage("GetAllLocation");
             }
         }
-    }
+    }         

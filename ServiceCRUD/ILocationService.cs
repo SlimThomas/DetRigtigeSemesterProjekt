@@ -12,6 +12,8 @@ namespace DetRigtigeSemesterProjekt.ServiceCRUD
             Location GetLocation(string id);
 
             Location DeleteLocation(string? id);
+            
+            Location EditLocation(string id);
 
         
     }

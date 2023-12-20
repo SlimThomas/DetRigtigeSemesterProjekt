@@ -1,4 +1,28 @@
-﻿@page
+﻿@* @page
 @model DetRigtigeSemesterProjekt.Pages.CRUDs.GetAllLocationModel
 @{
 }
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Location.Address" class="control-lable"></label>
+        <input asp-for="Location.Address" class="form-control" readonly="@(true)"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location.Name" class="control-lable"></label>
+        <input asp-for="Location.Name" class="form-control" />
+        <span asp-validation-for="Location.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location.Postnr" class="control-lable"></label>
+        <input asp-for="Location.Postnr" class="form-control" />
+        <span asp-validation-for="Location.Postnr" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Update" class="btn btn-primary" />
+    </div>
+</form>
+<div>
+    <a asp-page="/Item/GetAllLocation">Back to List</a>
+</div> *@

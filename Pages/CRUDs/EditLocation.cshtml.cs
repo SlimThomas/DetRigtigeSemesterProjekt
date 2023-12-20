@@ -14,6 +14,7 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
             {
                 locationService = itemService;
             }
+        // Her tilføjer jeg en constructor, som injicere ILocationService
             public IActionResult OnGet(string id)
             {
                 Location = locationService.GetLocation(id);
@@ -34,7 +35,7 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
                 return RedirectToPage("GetAllItems");
             }
 
-
+        // Jeg laver en OnPost metode som skal kalde på UpdateLocation
         }
     }
     

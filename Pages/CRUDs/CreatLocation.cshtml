@@ -1,4 +1,23 @@
-﻿@page
-@model DetRigtigeSemesterProjekt.Pages.CRUDs.CreatLocationModel
+﻿@* @page
+@model DetRigtigeSemesterProjekt.Pages.CRUDs.CreateLocationModel
 @{
 }
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Location.Address" class="control-lable"></label>
+        <input asp-for="@Model.Location.Address" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Location.Name" class="control-lable"></label>
+        <input asp-for="@Model.Location.Name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Location.Postnr" class="control-lable"></label>
+        <input asp-for="@Model.Location.Postnr" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form> *@

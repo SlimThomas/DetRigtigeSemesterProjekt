@@ -9,14 +9,18 @@ namespace DetRigtigeSemesterProjekt.Pages.CRUDs
     public class GetAllLocationModel : PageModel
     {
             public List<Models.Location> Items { get; set; }
-            private ILocationService locationService;
+        public List<Location> Location { get; private set; }
+
+        private ILocationService locationService;
             public GetAllLocationModel(ILocationService locationService)
             {
                 locationService = locationService;
             }
+
+        // her refaktorer jeg metoden så den kan hente Mockdata igennem service 
             public void OnGet()
             {
-                Items = locationService.GetLocation();
+                Location = locationService.GetLocation();
             }
         }
     }
